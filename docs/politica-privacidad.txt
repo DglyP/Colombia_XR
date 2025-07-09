@@ -1,7 +1,7 @@
 Política de Tratamiento de Datos Personales – ColombiaXR Encuentro 2025
 
 1. Responsable del Tratamiento
-La Asociación Colombiana de Tecnologías Interactivas, Inmersivas y Emergentes (ColombiaXR) es responsable del tratamiento de los datos personales recolectados durante el evento.
+La Asociación Colombiana de Tecnologías Interactivas, Inmersivas y Emergentes (XRCol) es responsable del tratamiento de los datos personales recolectados durante el evento.
 
 2. Finalidad
 Los datos personales serán utilizados exclusivamente para la gestión del evento, comunicaciones informativas, envío de recordatorios y notificaciones relacionadas con ColombiaXR Encuentro 2025.
@@ -10,7 +10,7 @@ Los datos personales serán utilizados exclusivamente para la gestión del event
 Los titulares pueden conocer, actualizar, rectificar y suprimir sus datos personales, así como revocar la autorización otorgada, escribiendo a xrcol.info@gmail.com.
 
 4. Seguridad
-ColombiaXR implementa medidas de seguridad para proteger la información personal contra acceso, uso o divulgación no autorizados.
+XRCol implementa medidas de seguridad para proteger la información personal contra acceso, uso o divulgación no autorizados.
 
 5. Conservación
 Los datos serán conservados únicamente durante el tiempo necesario para cumplir con las finalidades mencionadas.

@@ -223,7 +223,7 @@
     <nav class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto" aria-label="Navegación principal">
       <a href="#hero" class="flex items-center gap-2 text-primary font-extrabold text-lg focus-visible:outline-primary" aria-label="XRCOL Encuentro 2025 Inicio">
         <span aria-hidden="true">
-          <svg width="28" height="28" fill="none" viewBox="0 0 28 28" class="inline-block"><circle cx="14" cy="14" r="14" fill="#00E5FF"/><path d="M8 20l6-12 6 12" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#00E5FF] font-extrabold text-black text-base" style="font-family: 'Inter', ui-sans-serif, system-ui;">XR</span>
         </span>
         <span class="font-extrabold">ColombiaXR</span>
       </a>
@@ -240,9 +240,13 @@
   </header>
   <main id="hero" class="relative min-h-screen flex flex-col justify-center items-center text-center cyber-bg" style="background:linear-gradient(135deg,#1A1A2E 0%,#16213E 50%,#0F3460 100%)">
     <div class="absolute inset-0 pointer-events-none" aria-hidden="true"></div>
-    <div class="relative z-10 max-w-3xl mx-auto px-6 py-24">
+    <div class="relative z-10 max-w-3xl mx-auto px-6 pt-10 pb-20">
       <!-- Optional: Add hero image here -->
       <!-- <img src="your-hero-image.jpg" alt="ColombiaXR Encuentro 2025" class="mx-auto mb-8 rounded-xl shadow-lg max-w-md"> -->
+      <div class="flex flex-col items-center mb-6">
+        <span class="uppercase tracking-widest text-xs font-semibold text-cyan-300 mb-1">Faltan</span>
+        <div id="countdown-event" class="text-2xl sm:text-3xl font-extrabold neon-text cyber-glow"></div>
+      </div>
       <h1 class="font-extrabold text-balance text-4xl sm:text-5xl md:text-6xl leading-tight mb-4" style="text-wrap:balance;">
         <span class="colombia-text">ColombiaXR</span> Encuentro 2025 – Tecnologías Interactivas, Inmersivas y Emergentes
       </h1>
@@ -265,6 +269,9 @@
   </main>
   <section id="sobre" class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-center relative z-20">
     <div>
+      <div class="mb-4 flex items-center justify-center">
+        <img src="img/XRCol_logo.png" alt="Logo XRCol" class="w-1/3 mx-auto" loading="lazy">
+      </div>
       <h2 class="text-2xl sm:text-3xl font-bold neon-text mb-4 cyber-glow">Sobre el evento</h2>
       <p class="mb-6 text-lg text-gray-300">
         La Asociación Colombiana de Tecnologías Interactivas, Inmersivas y Emergentes – <strong>XRCOL</strong> – invita al «ColombiaXR Encuentro 2025», un espacio de exhibición, networking e inspiración sobre las tecnologías que están redefiniendo la relación humano-máquina y las experiencias inmersivas en Colombia. Aquí convergen realidad virtual, aumentada y mixta, mundos virtuales, IA aplicada a la interacción y otras tecnologías emergentes para mostrar el talento y potencial del país.
@@ -306,7 +313,9 @@
       </div>
     </div>
     <div class="flex justify-center">
-      <img src="img/POSTER XRCOL.png" width="480" height="320" alt="Poster del ColombiaXR Encuentro 2025" class="rounded-xl shadow-2xl w-full max-w-md transform rotate-3 hover:rotate-0 transition-all duration-500 hover:scale-105 cursor-pointer" loading="lazy" style="box-shadow: 0 20px 40px rgba(0, 229, 255, 0.3), 0 10px 20px rgba(255, 0, 128, 0.2), 0 0 30px rgba(0, 212, 255, 0.4); filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));" onclick="window.open('img/POSTER XRCOL.png', '_blank')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')window.open('img/POSTER XRCOL.png', '_blank')" title="Haz clic para ver el poster en pantalla completa">
+      <a href="#registro" title="Ir al registro">
+        <img src="img/POSTER XRCOL.png" width="480" height="320" alt="Poster del ColombiaXR Encuentro 2025" class="rounded-xl shadow-2xl w-full max-w-md transform rotate-3 hover:rotate-0 transition-all duration-500 hover:scale-105 cursor-pointer" loading="lazy" style="box-shadow: 0 20px 40px rgba(0, 229, 255, 0.3), 0 10px 20px rgba(255, 0, 128, 0.2), 0 0 30px rgba(0, 212, 255, 0.4); filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));">
+      </a>
     </div>
   </section>
   <section id="cronograma" class="bg-cyber-darker py-16 relative z-5" style="background:linear-gradient(135deg,rgba(22,33,62,0.7) 0%,rgba(15,52,96,0.7) 100%)">
@@ -397,7 +406,7 @@
           <span>Estacionamiento disponible para visitantes</span>
         </li>
       </ul>
-      <a href="#" target="_blank" rel="noopener" class="neon-text underline hover:text-cyan-text focus-visible:outline-primary">Sitio web del Centro de Innovación</a>
+      <a href="https://www.ecopetrol.com.co/wps/portal/Home/es/noticias/detalle/ecopetrol-y-la-camara-de-comercio-de-bogota-inauguraron-nuevo-centro-de-innovacion" target="_blank" rel="noopener" class="neon-text underline hover:text-cyan-text focus-visible:outline-primary">Sitio web del Centro de Innovación</a>
     </div>
     <div>
       <div class="aspect-ratio-iframe rounded-xl shadow-lg overflow-hidden">
@@ -408,12 +417,12 @@
       </noscript>
     </div>
   </section>
-  <section id="registro" class="max-w-2xl mx-auto px-6 py-16 relative z-20">
+  <section id="registro" class="max-w-4xl mx-auto px-4 py-16 relative z-20">
     <h2 class="text-2xl sm:text-3xl font-bold neon-text mb-6 text-center cyber-glow">Asegura tu cupo</h2>
     <p class="text-gray-300 text-center mb-4">Regístrate ahora para reservar tu lugar en el <strong>ColombiaXR</strong> Encuentro 2025. Tu información se mantiene privada y se usa únicamente para comunicaciones del evento.</p>
-    <form class="bg-cyber-dark rounded-xl shadow-lg p-6 cyber-border" method="post" action="https://docs.google.com/forms/d/1bnbVusaS-i7eOt7lXR_9EnYTMTY8IeVjv1EQ3Vi7AgI/viewform" target="_blank" aria-label="Formulario de Registro" autocomplete="off" style="background:linear-gradient(135deg,#1A1A2E 0%,#16213E 100%)">
-      <div class="aspect-ratio-iframe mb-4">
-        <iframe src="https://docs.google.com/forms/d/1bnbVusaS-i7eOt7lXR_9EnYTMTY8IeVjv1EQ3Vi7AgI/viewform?embedded=true" width="640" height="800" frameborder="0" marginheight="0" marginwidth="0" title="Registro ColombiaXR Encuentro 2025" aria-label="Registro ColombiaXR Encuentro 2025" loading="lazy"></iframe>
+    <form class="bg-cyber-dark rounded-xl shadow-lg p-6 cyber-border w-full" method="post" action="https://docs.google.com/forms/d/1bnbVusaS-i7eOt7lXR_9EnYTMTY8IeVjv1EQ3Vi7AgI/viewform" target="_blank" aria-label="Formulario de Registro" autocomplete="off" style="background:linear-gradient(135deg,#1A1A2E 0%,#16213E 100%)">
+      <div class="aspect-ratio-iframe mb-4 w-full">
+        <iframe src="https://docs.google.com/forms/d/1bnbVusaS-i7eOt7lXR_9EnYTMTY8IeVjv1EQ3Vi7AgI/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0" title="Registro ColombiaXR Encuentro 2025" aria-label="Registro ColombiaXR Encuentro 2025" loading="lazy" style="width:100%;"></iframe>
       </div>
       <noscript>
         <p class="text-gray-300 mb-2">Se requiere JavaScript para mostrar el formulario de registro. <a href="https://docs.google.com/forms/d/1bnbVusaS-i7eOt7lXR_9EnYTMTY8IeVjv1EQ3Vi7AgI/viewform" class="colombia-text underline">Regístrate aquí</a>.</p>
@@ -448,4 +457,24 @@
     <div class="text-center text-xs text-gray-400 mt-4">© 2025 <strong>Lucid Dreams S.A.S</strong></div>
   </footer>
 </body>
+<script>
+(function(){
+  function updateCountdown() {
+    const eventDate = new Date('2025-07-29T08:30:00-05:00');
+    const now = new Date();
+    let diff = eventDate - now;
+    if (diff < 0) diff = 0;
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+    const el = document.getElementById('countdown-event');
+    if (el) {
+      el.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+})();
+</script>
 </html>
