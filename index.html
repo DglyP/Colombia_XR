@@ -70,6 +70,22 @@
     .cyan-text{color:#00D4FF;text-shadow:0 0 5px #00D4FF}
     .colombia-text{color:inherit;text-shadow:0 0 0 currentColor;animation:colombia-stroke 4s linear infinite}
     @keyframes colombia-stroke{0%{text-shadow:-2px -2px 0 #FFD700,2px -2px 0 #003893,2px 2px 0 #CE1126,-2px 2px 0 #FFD700}25%{text-shadow:2px -2px 0 #FFD700,-2px -2px 0 #003893,-2px 2px 0 #CE1126,2px 2px 0 #FFD700}50%{text-shadow:2px 2px 0 #FFD700,2px -2px 0 #003893,-2px -2px 0 #CE1126,-2px 2px 0 #FFD700}75%{text-shadow:-2px 2px 0 #FFD700,2px 2px 0 #003893,2px -2px 0 #CE1126,-2px -2px 0 #FFD700}100%{text-shadow:-2px -2px 0 #FFD700,2px -2px 0 #003893,2px 2px 0 #CE1126,-2px 2px 0 #FFD700}}
+    .breathing-glow {
+      animation: breathing-glow 2.5s ease-in-out infinite;
+    }
+    @keyframes breathing-glow {
+      0%,100% { box-shadow: 0 0 32px 4px #00e5ff66, 0 0 0 4px transparent, 0 0 0 8px #ff008066; }
+      50% { box-shadow: 0 0 64px 12px #00e5ffcc, 0 0 0 8px #ff008099, 0 0 0 16px #00e5ff33; }
+    }
+    .progress-animated {
+      background: repeating-linear-gradient(135deg, #00D4FF 0 10px, #00E5FF 10px 20px, #00D4FF 20px 30px, #00E5FF 30px 40px);
+      animation: progress-stripes 1.2s linear infinite;
+      background-size: 40px 40px;
+    }
+    @keyframes progress-stripes {
+      0% { background-position: 0 0; }
+      100% { background-position: 40px 0; }
+    }
   </style>
   <script>
     document.addEventListener('DOMContentLoaded',function(){
@@ -253,10 +269,15 @@
       <p class="cyan-text text-lg sm:text-2xl font-semibold mb-8 tracking-wide cyber-glow">
         Exhibe, Conecta, Inspira
       </p>
-      <a href="#registro" class="inline-block px-8 py-3 rounded-full bg-secondary text-white font-bold text-lg shadow-lg hover:bg-pink-600 focus-visible:outline-primary transition cyber-border" role="button" aria-label="Regístrate gratis">Regístrate gratis</a>
+      <a href="#registro" class="inline-block px-8 py-3 rounded-full bg-secondary text-white font-bold text-lg shadow-lg hover:bg-pink-600 focus-visible:outline-primary transition cyber-border" role="button" aria-label="Regístrate ahora">Regístrate ahora</a>
       <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 text-gray-300 text-base">
         <span class="inline-flex items-center gap-1">
-          <svg width="20" height="20" fill="none" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 18s6-5.686 6-9.5A6 6 0 1 0 4 8.5C4 12.314 10 18 10 18z" stroke="#00D4FF" stroke-width="2" fill="none"/></svg>
+          <svg width="20" height="20" fill="none" viewBox="0 0 20 20" aria-hidden="true">
+            <rect x="3" y="5" width="14" height="12" rx="2" fill="#1A1A2E" stroke="#00D4FF" stroke-width="2"/>
+            <rect x="3" y="8" width="14" height="9" rx="0" fill="#00D4FF" fill-opacity="0.08"/>
+            <rect x="6" y="2" width="2" height="4" rx="1" fill="#00D4FF"/>
+            <rect x="12" y="2" width="2" height="4" rx="1" fill="#00D4FF"/>
+          </svg>
           29 de julio de 2025 · 08:30 a.m. – 1:00 p.m. COT
         </span>
         <span aria-hidden="true" class="hidden sm:inline">|</span>
@@ -265,6 +286,19 @@
           Centro de Innovación, Bogotá D. C.
         </span>
       </div>
+        <div class="mt-8 flex justify-center w-full">
+          <div class="w-full max-w-md bg-cyber-dark rounded-2xl border-4 border-transparent shadow-xl cyber-glow px-6 py-4 breathing-glow"
+               style="box-shadow: 0 0 32px 4px #00e5ff66, 0 0 0 4px transparent, 0 0 0 8px #ff008066; border-image: linear-gradient(90deg,#00E5FF,#FF0080) 1;">
+            <div class="flex justify-between w-full mb-1">
+              <span class="text-xs font-semibold text-cyan-300 uppercase tracking-widest">Cupos limitados</span>
+              <span class="text-xs font-semibold text-cyan-300">55%</span>
+            </div>
+            <div class="w-full h-3 bg-cyber-dark rounded-full border border-cyan-400 overflow-hidden">
+              <div class="h-full bg-cyan-400 progress-animated" style="width:55%"></div>
+            </div>
+            <p class="text-cyan-200 text-sm mt-2">¡Regístrate pronto! Los cupos se están llenando.</p>
+          </div>
+        </div>
     </div>
   </main>
   <section id="sobre" class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-center relative z-20">
@@ -277,7 +311,7 @@
         La Asociación Colombiana de Tecnologías Interactivas, Inmersivas y Emergentes – <strong>XRCOL</strong> – invita al «ColombiaXR Encuentro 2025», un espacio de exhibición, networking e inspiración sobre las tecnologías que están redefiniendo la relación humano-máquina y las experiencias inmersivas en Colombia. Aquí convergen realidad virtual, aumentada y mixta, mundos virtuales, IA aplicada a la interacción y otras tecnologías emergentes para mostrar el talento y potencial del país.
       </p>
       <div class="mb-6">
-        <h3 class="text-lg font-semibold neon-text mb-3 cyber-glow">Objetivos</h3>
+        <h3 class="text-lg font-semibold neon-text mb-3 cyber-glow">¿Qué queremos lograr?</h3>
         <ul class="space-y-2 text-base text-gray-300">
           <li class="flex items-start gap-2">
             <span class="mt-1">
@@ -306,9 +340,9 @@
         </ul>
       </div>
       <div>
-        <h3 class="text-lg font-semibold neon-text mb-3 cyber-glow">Público objetivo</h3>
+        <h3 class="text-lg font-semibold neon-text mb-3 cyber-glow">¿Quiénes pueden participar?</h3>
         <p class="text-base text-gray-300 mb-2">• Ciudadanos curiosos por las nuevas tecnologías</p>
-        <p class="text-base text-gray-300 mb-2">• Profesionales y estudiantes de ingeniería, diseño, arte, arquitectura, salud, educación</p>
+        <p class="text-base text-gray-300 mb-2">• Profesionales y estudiantes de ingeniería, diseño, arte, arquitectura, salud y educación</p>
         <p class="text-base text-gray-300">• Start-ups, instituciones y aliados potenciales para proyectos o inversión</p>
       </div>
     </div>
@@ -320,7 +354,7 @@
   </section>
   <section id="cronograma" class="bg-cyber-darker py-16 relative z-5" style="background:linear-gradient(135deg,rgba(22,33,62,0.7) 0%,rgba(15,52,96,0.7) 100%)">
     <div class="max-w-4xl mx-auto px-6">
-      <h2 class="text-2xl sm:text-3xl font-bold neon-text mb-10 text-center cyber-glow">Cronograma del evento</h2>
+      <h2 class="text-2xl sm:text-3xl font-bold neon-text mb-10 text-center cyber-glow">Agenda del evento</h2>
       <div class="space-y-8" itemscope itemtype="https://schema.org/Event">
         <div class="timeline-item bg-cyber-dark rounded-lg shadow-md p-6 ml-8 cyber-border" style="background:linear-gradient(135deg,#1A1A2E 0%,#16213E 100%)">
           <div class="timeline-dot"></div>
@@ -421,16 +455,11 @@
     <h2 class="text-2xl sm:text-3xl font-bold neon-text mb-6 text-center cyber-glow">Asegura tu cupo</h2>
     <p class="text-gray-300 text-center mb-4">Regístrate ahora para reservar tu lugar en el <strong>ColombiaXR</strong> Encuentro 2025. Tu información se mantiene privada y se usa únicamente para comunicaciones del evento.</p>
     <form class="bg-cyber-dark rounded-xl shadow-lg p-6 cyber-border w-full" method="post" action="https://docs.google.com/forms/d/1bnbVusaS-i7eOt7lXR_9EnYTMTY8IeVjv1EQ3Vi7AgI/viewform" target="_blank" aria-label="Formulario de Registro" autocomplete="off" style="background:linear-gradient(135deg,#1A1A2E 0%,#16213E 100%)">
-      <div class="aspect-ratio-iframe mb-4 w-full">
-        <iframe src="https://docs.google.com/forms/d/1bnbVusaS-i7eOt7lXR_9EnYTMTY8IeVjv1EQ3Vi7AgI/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0" title="Registro ColombiaXR Encuentro 2025" aria-label="Registro ColombiaXR Encuentro 2025" loading="lazy" style="width:100%;"></iframe>
-      </div>
+      <!-- Embedded form removed; only the button remains -->
+      <a href="https://docs.google.com/forms/d/1bnbVusaS-i7eOt7lXR_9EnYTMTY8IeVjv1EQ3Vi7AgI/viewform" target="_blank" rel="noopener" class="block w-full py-4 px-6 rounded-xl bg-cyan-400 text-black font-bold text-lg text-center shadow-lg hover:bg-cyan-300 focus-visible:outline-primary transition mb-4">Abrir formulario de registro</a>
       <noscript>
         <p class="text-gray-300 mb-2">Se requiere JavaScript para mostrar el formulario de registro. <a href="https://docs.google.com/forms/d/1bnbVusaS-i7eOt7lXR_9EnYTMTY8IeVjv1EQ3Vi7AgI/viewform" class="colombia-text underline">Regístrate aquí</a>.</p>
       </noscript>
-      <div class="flex items-center gap-2 mb-4">
-        <input type="checkbox" id="agree" name="agree" class="accent-primary w-5 h-5" required aria-required="true">
-        <label for="agree" class="text-sm text-gray-300 select-none">Acepto la <a href="/docs/politica-privacidad.txt" class="underline neon-text hover:text-cyan-text" target="_blank" rel="noopener">política de tratamiento de datos</a> y su uso.</label>
-      </div>
       <!-- External submit button removed; users should use the button inside the embedded Google Form -->
     </form>
     <p class="text-xs text-gray-400 mt-3 text-center">Respetamos tu privacidad. Tus datos se usan únicamente para actualizaciones del evento y no serán compartidos.</p>
@@ -449,7 +478,7 @@
         <a href="https://www.meetup.com/colombia-xr-creando-realidades-construyendo-futuro/" aria-label="Meetup" target="_blank" rel="noopener" class="focus-visible:outline-primary">
           <svg width="22" height="22" fill="none" viewBox="0 0 22 22" aria-hidden="true"><rect width="22" height="22" rx="4" fill="#FF0080"/><path d="M7.5 15c-.7 0-1.2-.5-1.2-1.2 0-.6.5-1.1 1.1-1.1.7 0 1.2.5 1.2 1.2 0 .6-.5 1.1-1.1 1.1zm7-7c.7 0 1.2.5 1.2 1.2 0 .6-.5 1.1-1.1 1.1-.7 0-1.2-.5-1.2-1.2 0-.6.5-1.1 1.1-1.1zm-2.5 2.5c.7 0 1.2.5 1.2 1.2 0 .6-.5 1.1-1.1 1.1-.7 0-1.2-.5-1.2-1.2 0-.6.5-1.1 1.1-1.1zm-2.5 2.5c.7 0 1.2.5 1.2 1.2 0 .6-.5 1.1-1.1 1.1-.7 0-1.2-.5-1.2-1.2 0-.6.5-1.1 1.1-1.1zm1.25-6.5c.7 0 1.2.5 1.2 1.2 0 .6-.5 1.1-1.1 1.1-.7 0-1.2-.5-1.2-1.2 0-.6.5-1.1 1.1-1.1z" fill="#fff"/></svg>
         </a>
-        <a href="https://luciddreams.com.co" aria-label="Sitio web" target="_blank" rel="noopener" class="focus-visible:outline-primary">
+        <a href="https://www.instagram.com/lucid.dreamsxr/" aria-label="Sitio web" target="_blank" rel="noopener" class="focus-visible:outline-primary">
           <svg width="22" height="22" fill="none" viewBox="0 0 22 22"><rect width="22" height="22" rx="4" fill="#FF0080"/><path d="M11 7a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm0 0V5m0 10v2m4-6h2m-14 0H3" stroke="#000" stroke-width="1.5" stroke-linecap="round"/></svg>
         </a>
       </div>
