@@ -291,10 +291,10 @@
                style="box-shadow: 0 0 32px 4px #00e5ff66, 0 0 0 4px transparent, 0 0 0 8px #ff008066; border-image: linear-gradient(90deg,#00E5FF,#FF0080) 1;">
             <div class="flex justify-between w-full mb-1">
               <span class="text-xs font-semibold text-cyan-300 uppercase tracking-widest">Cupos limitados</span>
-              <span class="text-xs font-semibold text-cyan-300">55%</span>
+              <span class="text-xs font-semibold text-cyan-300">73%</span>
             </div>
             <div class="w-full h-3 bg-cyber-dark rounded-full border border-cyan-400 overflow-hidden">
-              <div class="h-full bg-cyan-400 progress-animated" style="width:55%"></div>
+              <div class="h-full bg-cyan-400 progress-animated" style="width:73%"></div>
             </div>
             <p class="text-cyan-200 text-sm mt-2">¡Regístrate pronto! Los cupos se están llenando.</p>
           </div>
@@ -303,8 +303,32 @@
   </main>
   <section id="sobre" class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-center relative z-20">
     <div>
-      <div class="mb-4 flex items-center justify-center">
-        <img src="img/XRCol_logo.png" alt="Logo XRCol" class="w-1/3 mx-auto" loading="lazy">
+      <div class="mb-8">
+        <div class="relative">
+           <div id="logo-carousel-track" class="flex overflow-x-auto gap-6 px-10 py-2 scroll-smooth" tabindex="0" style="scrollbar-width:none; -ms-overflow-style:none;">
+            <div class="bg-white rounded-xl shadow p-4 flex items-center min-w-[140px] h-20 justify-center">
+              <img src="img/Logos/Ecopetrol.png" alt="Logo Ecopetrol" class="h-14 max-w-[120px] object-contain" loading="lazy">
+            </div>
+            <div class="bg-white rounded-xl shadow p-4 flex items-center min-w-[140px] h-20 justify-center">
+              <img src="img/Logos/Lucid.png" alt="Logo Centro de Innovación" class="h-14 max-w-[120px] object-contain" loading="lazy">
+            </div>
+            <div class="bg-white rounded-xl shadow p-4 flex items-center min-w-[140px] h-20 justify-center">
+              <img src="img/Logos/Econova.png" alt="Logo Econova" class="h-14 max-w-[120px] object-contain" loading="lazy">
+            </div>
+            <div class="bg-white rounded-xl shadow p-4 flex items-center min-w-[140px] h-20 justify-center">
+              <img src="img/Logos/Campus.png" alt="Logo Campus" class="h-14 max-w-[120px] object-contain" loading="lazy">
+            </div>
+            <div class="bg-white rounded-xl shadow p-4 flex items-center min-w-[140px] h-20 justify-center">
+              <img src="img/Logos/Camara.png" alt="Logo Cámara de Comercio" class="h-14 max-w-[120px] object-contain" loading="lazy">
+            </div>
+            <div class="bg-white rounded-xl shadow p-4 flex items-center min-w-[140px] h-20 justify-center">
+              <img src="img/Logos/CentroInn.png" alt="Logo Lucid Dreams" class="h-14 max-w-[120px] object-contain" loading="lazy">
+            </div>
+            <div class="bg-white rounded-xl shadow p-4 flex items-center min-w-[140px] h-20 justify-center">
+              <img src="img/Logos/XRCol.png" alt="Logo XRCol" class="h-14 max-w-[120px] object-contain" loading="lazy">
+            </div>
+          </div>
+        </div>
       </div>
       <h2 class="text-2xl sm:text-3xl font-bold neon-text mb-4 cyber-glow">Sobre el evento</h2>
       <p class="mb-6 text-lg text-gray-300">
@@ -504,6 +528,80 @@
   }
   updateCountdown();
   setInterval(updateCountdown, 1000);
+  // Logo carousel logic
+  let autoScroll, isPaused = false;
+  const track = document.getElementById('logo-carousel-track');
+  if(track) {
+    // Enable mouse drag and touch swipe
+    let isDown = false, startX, scrollLeft;
+    // Mouse events
+    track.addEventListener('mousedown', (e) => {
+      isDown = true;
+      track.classList.add('cursor-grabbing');
+      startX = e.pageX - track.offsetLeft;
+      scrollLeft = track.scrollLeft;
+      isPaused = true; // Pause auto-scroll on drag
+      e.preventDefault();
+    });
+    track.addEventListener('mouseleave', () => {
+      isDown = false;
+      track.classList.remove('cursor-grabbing');
+      isPaused = false; // Resume auto-scroll
+    });
+    track.addEventListener('mouseup', () => {
+      isDown = false;
+      track.classList.remove('cursor-grabbing');
+      isPaused = false; // Resume auto-scroll
+    });
+    track.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - track.offsetLeft;
+      const walk = (x - startX) * 1.5; // scroll-fast
+      track.scrollLeft = scrollLeft - walk;
+    });
+    // Touch events
+    let touchStartX = 0, touchScrollLeft = 0;
+    track.addEventListener('touchstart', (e) => {
+      isDown = true;
+      touchStartX = e.touches[0].pageX;
+      touchScrollLeft = track.scrollLeft;
+      isPaused = true; // Pause auto-scroll on swipe
+    });
+    track.addEventListener('touchend', () => {
+      isDown = false;
+      isPaused = false; // Resume auto-scroll
+    });
+    track.addEventListener('touchmove', (e) => {
+      if (!isDown) return;
+      const x = e.touches[0].pageX;
+      const walk = (x - touchStartX) * 1.5;
+      track.scrollLeft = touchScrollLeft - walk;
+    });
+    // Infinite auto-scroll logic
+    if (!track.dataset.cloned) {
+      track.innerHTML += track.innerHTML;
+      track.dataset.cloned = 'true';
+    }
+    function startAutoScroll() {
+      if (autoScroll) clearInterval(autoScroll);
+      autoScroll = setInterval(() => {
+        if (isPaused) return;
+        track.scrollLeft += 3; // Faster scroll
+        // Reset for seamless loop
+        if (track.scrollLeft >= (track.scrollWidth / 2)) {
+          track.scrollLeft = 0;
+        }
+      }, 16); // ~60fps
+    }
+    function pauseAutoScroll() { isPaused = true; }
+    function resumeAutoScroll() { isPaused = false; }
+    track.addEventListener('mouseenter', pauseAutoScroll);
+    track.addEventListener('mouseleave', resumeAutoScroll);
+    track.addEventListener('focusin', pauseAutoScroll);
+    track.addEventListener('focusout', resumeAutoScroll);
+    startAutoScroll();
+  }
 })();
 </script>
 </html>
