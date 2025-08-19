@@ -1,0 +1,34 @@
+[
+  {
+    "slug": "colombiaxr-encuentro-2025",
+    "title": "ColombiaXR Encuentro 2025",
+    "subtitle": "Tecnologías Interactivas, Inmersivas y Emergentes",
+    "startDate": "2025-07-29T22:30:00+09:00",
+    "endDate": "2025-07-30T01:00:00+09:00",
+    "status": "past",
+    "venueName": "Centro de Ciencia Tecnología e Innovación de Bogotá",
+    "venueAddress": "Cra 37 #24-24, Edificio Hotel Hilton, Corferias Bogotá",
+    "heroThumb": "/img/POSTER XRCOL.jpg",
+    "cardImage": "/img/POSTER XRCOL.jpg",
+    "description": "Un encuentro XR en Bogotá con charlas, demos y networking.",
+    "ticketsUrl": "",
+    "pageUrl": "/events/colombiaxr-encuentro-2025/",
+    "theme": {"primary": "#00E5FF", "background": "#1A1A2E", "accent": "#FF0080"}
+  },
+  {
+    "slug": "hackathonar-bogota-sep-2025",
+    "title": "#HackathonAR",
+    "subtitle": "Sumérgete en lo real… pero con una capa digital",
+    "startDate": "2025-09-17T09:00:00-05:00",
+    "endDate": "2025-09-20T13:00:00-05:00",
+    "status": "upcoming",
+    "venueName": "Bogotá (lugar por confirmar)",
+    "venueAddress": "Bogotá, Colombia",
+    "heroThumb": "/events/hackathonar-bogota-sep-2025/hero-thumb.jpg",
+    "cardImage": "/events/hackathonar-bogota-sep-2025/card.jpg",
+    "description": "Hackathon creativa de Realidad Aumentada (WebAR) con 8th Wall y mentores invitados. Bogotá, 17–20 de septiembre de 2025.",
+    "ticketsUrl": "#inscripcion",
+    "pageUrl": "/events/hackathonar-bogota-sep-2025/",
+    "theme": {"primary": "#00C2FF", "background": "inherit", "accent": "inherit"}
+  }
+]

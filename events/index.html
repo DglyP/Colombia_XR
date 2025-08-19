@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Todos los eventos – ColombiaXR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" media="all" onload="this.media='all'">
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <style>
+    body{background:#0A0A0A;color:#F4F4F5;font-family:Inter,ui-sans-serif,system-ui}
+    .cards-grid{display:grid;grid-template-columns:repeat(1,minmax(0,1fr));gap:1rem}
+    @media(min-width:640px){.cards-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(min-width:1024px){.cards-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+  </style>
+</head>
+<body>
+  <header class="max-w-7xl mx-auto px-6 py-4"><a href="/" class="text-cyan-400 font-bold">← Volver</a></header>
+  <main class="max-w-7xl mx-auto px-6 py-12">
+    <h1 class="text-3xl font-extrabold mb-6">Todos los eventos</h1>
+    <section class="mb-10">
+      <h2 class="text-2xl font-bold mb-3">Próximos</h2>
+      <div id="events-upcoming" class="cards-grid"></div>
+    </section>
+    <section>
+      <details open>
+        <summary class="text-2xl font-bold cursor-pointer">Eventos pasados</summary>
+        <div id="events-past" class="cards-grid mt-4"></div>
+      </details>
+    </section>
+  </main>
+  <footer class="max-w-7xl mx-auto px-6 py-8 text-sm text-gray-400">© 2025 ColombiaXR</footer>
+  <script src="/assets/js/home.js" defer></script>
+</body>
+</html>

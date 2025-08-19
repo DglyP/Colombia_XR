@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title><!-- EVENT: title -->Título del Evento – ColombiaXR</title>
+  <meta name="description" content="<!-- EVENT: description -->Descripción breve del evento (≤160 caracteres).">
+  <link rel="canonical" href="/events/<!-- EVENT: slug -->/">
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <!-- JSON-LD Event -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Event",
+    "name":"<!-- EVENT: title -->Título del Evento – ColombiaXR",
+    "startDate":"<!-- EVENT: startDate ISO+09:00 -->2025-09-20T18:30:00+09:00",
+    "endDate":"<!-- EVENT: endDate ISO+09:00 -->2025-09-20T21:30:00+09:00",
+    "eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus":"https://schema.org/EventScheduled",
+    "location":{
+      "@type":"Place",
+      "name":"<!-- EVENT: venue name -->Nombre del lugar",
+      "address":{"@type":"PostalAddress","streetAddress":"<!-- EVENT: address -->Dirección","addressLocality":"Tokyo","addressCountry":"JP"}
+    },
+    "image":["<!-- EVENT: hero -->/events/_template/hero-thumb.jpg"],
+    "description":"<!-- EVENT: description -->Descripción breve",
+    "offers":{"@type":"Offer","url":"<!-- EVENT: ticketsUrl -->","price":"0","priceCurrency":"JPY"}
+  }
+  </script>
+  <!-- Embedded event meta for tooling -->
+  <script id="event-meta" type="application/json">
+  {
+    "title":"<!-- EVENT: title -->",
+    "startDate":"<!-- EVENT: startDate ISO+09:00 -->",
+    "endDate":"<!-- EVENT: endDate ISO+09:00 -->",
+    "venueName":"<!-- EVENT: venue name -->",
+    "venueAddress":"<!-- EVENT: address -->",
+    "ticketsUrl":"<!-- EVENT: ticketsUrl -->"
+  }
+  </script>
+</head>
+<body class="font-sans bg-black text-white">
+  <header class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+    <a href="/" class="text-cyan-400 font-bold">ColombiaXR</a>
+    <nav class="text-sm"><a href="/events/" class="hover:underline">Todos los eventos</a></nav>
+  </header>
+  <main>
+    <!-- EVENT: hero image -->
+    <section class="text-center py-16" style="background:linear-gradient(135deg,#1A1A2E 0%,#16213E 50%,#0F3460 100%)">
+      <div class="max-w-3xl mx-auto px-6">
+        <h1 class="text-3xl sm:text-5xl font-extrabold mb-4"><!-- EVENT: title -->Título del Evento</h1>
+        <p class="text-lg text-gray-300 mb-4"><!-- EVENT: subtitle -->Subtítulo del evento</p>
+        <p class="text-gray-300 mb-2"><!-- EVENT: date -->Sep 20, 2025 • 18:30–21:30</p>
+        <p class="text-gray-400"><!-- EVENT: venue -->Nombre del lugar, Dirección</p>
+        <a href="<!-- EVENT: ticketsUrl -->" class="inline-block mt-6 px-8 py-3 rounded-full bg-cyan-400 text-black font-bold shadow hover:opacity-90">Conseguir entradas</a>
+      </div>
+    </section>
+    <section class="max-w-7xl mx-auto px-6 py-12">
+      <h2 class="text-2xl font-bold mb-3">Sobre el evento</h2>
+      <p class="text-gray-300"><!-- EVENT: long description -->Texto descriptivo largo del evento, objetivos, actividades y público.
+      </p>
+    </section>
+  </main>
+  <footer class="max-w-7xl mx-auto px-6 py-8 text-sm text-gray-400">© 2025 ColombiaXR</footer>
+</body>
+</html>
