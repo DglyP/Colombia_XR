@@ -8,16 +8,19 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>#HackathonAR – Bogotá 17–20 Sep 2025</title>
   <meta name="description" content="Hackathon creativa de Realidad Aumentada (WebAR) con 8th Wall y mentores invitados. Bogotá, 17–20 de septiembre de 2025.">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="shortcut icon" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
   <link rel="canonical" href="/events/hackathonar-bogota-sep-2025/">
   <meta property="og:title" content="#HackathonAR – Bogotá 17–20 Sep 2025">
   <meta property="og:description" content="Hackathon creativa de Realidad Aumentada (WebAR) con 8th Wall y mentores invitados. Bogotá, 17–20 de septiembre de 2025.">
   <meta property="og:type" content="event">
   <meta property="og:url" content="/events/hackathonar-bogota-sep-2025/">
-  <meta property="og:image" content="/events/hackathonar-bogota-sep-2025/hero-thumb.jpg">
+  <meta property="og:image" content="/events/hackathonar-bogota-sep-2025/hero-thumb.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="#HackathonAR – Bogotá 17–20 Sep 2025">
   <meta name="twitter:description" content="Hackathon creativa de Realidad Aumentada (WebAR) con 8th Wall y mentores invitados. Bogotá, 17–20 de septiembre de 2025.">
-  <meta name="twitter:image" content="/events/hackathonar-bogota-sep-2025/hero-thumb.jpg">
+  <meta name="twitter:image" content="/events/hackathonar-bogota-sep-2025/hero-thumb.png">
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
@@ -29,17 +32,17 @@
       theme: {
         extend: {
           colors: {
-            primary: '#00C2FF',
-            secondary: '#FF0080',
-            tertiary: '#00D4FF',
+            primary: '#CC9602', /* nef.gold */
+            secondary: '#303030', /* nef.charcoal */
+            tertiary: '#F6F6F6', /* nef.soft */
             cyber: {
-              dark: '#1A1A2E',
-              darker: '#16213E',
-              neon: '#00C2FF',
-              pink: '#FF0080',
-              cyan: '#00D4FF',
-              purple: '#8A2BE2',
-              yellow: '#FFFF00'
+              dark: '#0F0F10',
+              darker: '#1A1A1A',
+              neon: '#CC9602',
+              pink: '#F2C02A',
+              cyan: '#9CA3AF',
+              purple: '#D59B2F',
+              yellow: '#C77429'
             }
           },
           fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] }
@@ -48,8 +51,9 @@
     }
   </script>
   <style>
+    .event-root{--color-primary:#CC9602;--color-secondary:#303030;--color-tertiary:#F6F6F6;--color-bg-0:#0F0F10;--color-bg-1:#1A1A1A;--color-bg-2:#1D0208;--color-text:#EAEAEA;--color-text-muted:#9CA3AF;--glow-primary:0 0 16px rgba(204,150,2,0.35)}
     html{scroll-behavior:smooth}
-    [tabindex]:focus-visible{outline:2px solid #00C2FF;outline-offset:2px}
+    [tabindex]:focus-visible{outline:2px solid #CC9602;outline-offset:3px}
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
     @media (max-width:768px){.nav-links{display:none}.nav-open .nav-links{display:flex}}
     .aspect-ratio-iframe{position:relative;width:100%;padding-bottom:56.25%}
@@ -57,17 +61,19 @@
     .hamburger[aria-expanded="true"] .bar:nth-child(1){transform:translateY(8px) rotate(45deg)}
     .hamburger[aria-expanded="true"] .bar:nth-child(2){opacity:0}
     .hamburger[aria-expanded="true"] .bar:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
-    .hamburger .bar{display:block;width:24px;height:3px;margin:5px auto;background:#00C2FF;transition:.3s}
+    .hamburger .bar{display:block;width:24px;height:3px;margin:5px auto;background:#CC9602;transition:.3s}
     .timeline-item{position:relative}
-    .timeline-item:not(:last-child)::after{content:'';position:absolute;left:1rem;top:3rem;bottom:-1.5rem;width:2px;background:linear-gradient(to bottom,#00C2FF,#00D4FF)}
-    .timeline-dot{position:absolute;left:0.5rem;top:0.5rem;width:1rem;height:1rem;border-radius:50%;background:#00C2FF;border:3px solid #1A1A2E;box-shadow:0 0 0 3px #00C2FF,0 0 10px #00C2FF}
-    body{background:#1A1A2E;color:#E5E5E5}
+    .timeline-item:not(:last-child)::after{content:'';position:absolute;left:1rem;top:3rem;bottom:-1.5rem;width:2px;background:linear-gradient(to bottom,#CC9602,#C77429,#F6F6F6)}
+    .timeline-dot{position:absolute;left:0.5rem;top:0.5rem;width:1rem;height:1rem;border-radius:50%;background:#CC9602;border:3px solid #F2C02A;box-shadow:0 0 0 3px rgba(204,150,2,0.30),0 0 10px rgba(204,150,2,0.30)}
+    body{background:var(--color-bg-0);color:var(--color-text)}
     .cyber-glow{text-shadow:0 0 10px currentColor}
-    .cyber-border{border:1px solid #00C2FF;box-shadow:0 0 10px rgba(0,194,255,0.3)}
-    .cyber-bg{background:linear-gradient(135deg,#1A1A2E 0%,#16213E 50%,#0F3460 100%)}
-    .neon-text{color:#00C2FF;text-shadow:0 0 5px #00C2FF}
-    .pink-text{color:#FF0080;text-shadow:0 0 5px #FF0080}
-    .cyan-text{color:#00D4FF;text-shadow:0 0 5px #00D4FF}
+    .cyber-border{border:1px solid #CC9602;box-shadow:var(--glow-primary)}
+    .cyber-bg{background:linear-gradient(135deg,var(--color-bg-0) 0%,var(--color-bg-1) 55%,var(--color-bg-2) 100%)}
+    .neon-text{color:#CC9602;text-shadow:0 0 5px rgba(204,150,2,0.45)}
+    .btn-primary{background:#CC9602;color:#0F0F10}
+    .btn-primary:hover{filter:brightness(0.92)}
+    .btn-secondary{border:1px solid #CC9602;color:#CC9602;background:transparent}
+    .btn-secondary:hover{background:#303030;color:#F6F6F6}
   </style>
   <script>
     document.addEventListener('DOMContentLoaded',function(){
@@ -81,11 +87,11 @@
         tsParticles.load("hero", {
           particles: {
             number: { value: 80, density: { enable: true, value_area: 800 } },
-            color: { value: ["#FFD700", "#00D4FF", "#FF0080"] },
+            color: { value: ["#CC9602", "#F2C02A", "#9CA3AF"] },
             shape: { type: "circle" },
-            opacity: { value: 0.8 },
+            opacity: { value: 0.7 },
             size: { value: 3, random: true },
-            line_linked: { enable: true, distance: 150, color: "#00D4FF", opacity: 0.4, width: 1 },
+            line_linked: { enable: true, distance: 150, color: "#CC9602", opacity: 0.32, width: 1 },
             move: { enable: true, speed: 2 }
           },
           interactivity: {
@@ -128,10 +134,10 @@
     "ticketsUrl":"#inscripcion"
   }</script>
 </head>
-<body class="font-sans bg-cyber-dark text-gray-100 antialiased">
+<body class="event-root font-sans bg-cyber-dark text-gray-100 antialiased">
   <header class="relative z-20">
     <nav class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto" aria-label="Navegación principal">
-      <a href="#hero" class="flex items-center gap-2 text-primary font-extrabold text-lg focus-visible:outline-primary" aria-label="#HackathonAR Inicio">
+      <a href="/" class="flex items-center gap-2 text-primary font-extrabold text-lg focus-visible:outline-primary" aria-label="#HackathonAR Inicio">
         <span aria-hidden="true">
           <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-primary font-extrabold text-black text-base">XR</span>
         </span>
@@ -149,9 +155,10 @@
     </nav>
   </header>
 
-  <main id="hero" class="relative min-h-screen flex flex-col justify-center items-center text-center cyber-bg" style="background:linear-gradient(135deg,#1A1A2E 0%,#16213E 50%,#0F3460 100%)">
+  <main id="hero" class="relative min-h-screen flex flex-col justify-center items-center text-center cyber-bg" style="background:linear-gradient(135deg, var(--color-bg-0) 0%, var(--color-bg-1) 55%, var(--color-bg-2) 100%)">
     <div class="absolute inset-0 pointer-events-none" aria-hidden="true"></div>
     <div class="relative z-10 max-w-3xl mx-auto px-6 pt-10 pb-20">
+      <img src="/img/Logos/NarrarElFuturo.png" alt="Narrar El Futuro" width="200" height="80" class="mx-auto mb-6 w-64 h-auto">
       <h1 class="font-extrabold text-balance text-4xl sm:text-5xl md:text-6xl leading-tight mb-3" style="text-wrap:balance;">#HackathonAR</h1>
       <p class="neon-text text-lg sm:text-2xl font-semibold mb-6 tracking-wide cyber-glow">Sumérgete en lo real… pero con una capa digital</p>
       <p class="text-gray-200 mb-8">¿Estás listo para descubrir lo que pasa cuando el mundo físico se fusiona con lo virtual? La #HackathonAR te invita a explorar nuevas fronteras narrativas a través de la realidad aumentada (AR).</p>
@@ -166,8 +173,8 @@
         </div>
       </div>
       <div class="flex gap-4 justify-center">
-        <a href="#inscripcion" class="inline-block px-8 py-3 rounded-full font-bold text-black text-lg shadow-lg focus-visible:outline-primary transition cyber-border" style="background:#00C2FF">Inscríbete</a>
-        <a href="#agenda" class="inline-block px-8 py-3 rounded-full bg-secondary text-white font-bold text-lg shadow-lg hover:bg-pink-600 focus-visible:outline-primary transition cyber-border">Ver cronograma</a>
+        <a href="#inscripcion" class="btn-primary inline-block px-8 py-3 rounded-full font-bold text-lg shadow-lg focus-visible:outline-primary transition cyber-border" role="button" aria-label="Inscríbete">Inscríbete</a>
+        <a href="#agenda" class="btn-secondary inline-block px-8 py-3 rounded-full font-bold text-lg shadow-lg focus-visible:outline-primary transition cyber-border" role="button" aria-label="Ver cronograma">Ver cronograma</a>
       </div>
     </div>
   </main>
@@ -180,13 +187,13 @@
       <p class="text-lg text-gray-300">Más que una competencia tecnológica, es un laboratorio creativo donde cada participante construye nuevas formas de interacción digital. Durante dos días intensivos y sesiones extendidas, equipos multidisciplinarios desarrollarán narrativas dinámicas usando 8th Wall para dar vida a experiencias web sorprendentes.</p>
     </div>
     <div class="flex justify-center">
-      <img src="/events/hackathonar-bogota-sep-2025/hero-thumb.jpg" width="640" height="360" alt="Imagen de portada de #HackathonAR – Bogotá 17–20 Sep 2025" class="rounded-xl shadow-2xl w-full max-w-xl transform rotate-1 hover:rotate-0 transition-all duration-500 hover:scale-105" loading="lazy" style="box-shadow: 0 20px 40px rgba(0, 194, 255, 0.3), 0 10px 20px rgba(255, 0, 128, 0.2), 0 0 30px rgba(0, 212, 255, 0.4);">
+      <img src="/events/hackathonar-bogota-sep-2025/hero-thumb.png" width="640" height="360" alt="Imagen de portada de #HackathonAR – Bogotá 17–20 Sep 2025" class="rounded-xl shadow-2xl w-full max-w-xl transform rotate-1 hover:rotate-0 transition-all duration-500 hover:scale-105" loading="lazy" style="box-shadow: 0 20px 40px rgba(204,150,2,0.30), 0 10px 20px rgba(245,192,42,0.20), 0 0 30px rgba(154,163,175,0.35);">
     </div>
   </section>
 
   <section id="fechas" class="max-w-4xl mx-auto px-6 py-12 relative z-20">
     <h2 class="text-2xl sm:text-3xl font-bold neon-text mb-6 cyber-glow">Cronograma (fechas clave)</h2>
-    <div class="bg-cyber-dark rounded-xl shadow-lg p-6 cyber-border" style="background:linear-gradient(135deg,#1A1A2E 0%,#16213E 100%)">
+    <div class="bg-cyber-dark rounded-xl shadow-lg p-6 cyber-border" style="background:linear-gradient(135deg, var(--color-bg-0) 0%, var(--color-bg-1) 100%)">
       <ul class="text-gray-300 space-y-2">
         <li><strong class="text-primary">Apertura de convocatoria:</strong> lunes 1 de septiembre de 2025</li>
         <li><strong class="text-primary">Cierre de convocatoria:</strong> lunes 15 de septiembre de 2025</li>
@@ -197,35 +204,35 @@
     </div>
   </section>
 
-  <section id="agenda" class="bg-cyber-darker py-16 relative z-5" style="background:linear-gradient(135deg,rgba(22,33,62,0.7) 0%,rgba(15,52,96,0.7) 100%)">
+  <section id="agenda" class="bg-cyber-darker py-16 relative z-5" style="background:linear-gradient(135deg, rgba(26,26,26,0.72) 0%, rgba(29,2,8,0.72) 100%)">
     <div class="max-w-4xl mx-auto px-6">
       <h2 class="text-2xl sm:text-3xl font-bold neon-text mb-10 text-center cyber-glow">Estructura de la hackathon (agenda)</h2>
       <div class="space-y-8">
-        <div class="timeline-item bg-cyber-dark rounded-lg shadow-md p-6 ml-8 cyber-border" style="background:linear-gradient(135deg,#1A1A2E 0%,#16213E 100%)">
+        <div class="timeline-item bg-cyber-dark rounded-lg shadow-md p-6 ml-8 cyber-border" style="background:linear-gradient(135deg, var(--color-bg-0) 0%, var(--color-bg-1) 100%)">
           <div class="timeline-dot"></div>
-          <time datetime="2025-09-17T09:00:00-05:00" class="block text-sm text-cyan-text font-medium mb-2">Día 1 — miércoles 17 de septiembre</time>
+          <time datetime="2025-09-17T09:00:00-05:00" class="block text-sm font-medium mb-2" style="color:#F2C02A">Día 1 — miércoles 17 de septiembre</time>
           <h3 class="font-semibold text-gray-100 mb-1">Introducción • 8th Wall</h3>
           <p class="text-gray-400 text-sm">9:00–12:00 — Introducción, formación en 8th Wall + otras plataformas</p>
           <p class="text-gray-400 text-sm">14:00–17:00 — Formación de equipos, primeros prototipos</p>
         </div>
-        <div class="timeline-item bg-cyber-dark rounded-lg shadow-md p-6 ml-8 cyber-border" style="background:linear-gradient(135deg,#1A1A2E 0%,#16213E 100%)">
+        <div class="timeline-item bg-cyber-dark rounded-lg shadow-md p-6 ml-8 cyber-border" style="background:linear-gradient(135deg, var(--color-bg-0) 0%, var(--color-bg-1) 100%)">
           <div class="timeline-dot"></div>
-          <time datetime="2025-09-18T09:00:00-05:00" class="block text-sm text-cyan-text font-medium mb-2">Día 2 — jueves 18 de septiembre</time>
+          <time datetime="2025-09-18T09:00:00-05:00" class="block text-sm font-medium mb-2" style="color:#F2C02A">Día 2 — jueves 18 de septiembre</time>
           <h3 class="font-semibold text-gray-100 mb-1">Desarrollo + Mentoría</h3>
           <p class="text-gray-400 text-sm">9:00–12:00 — Desarrollo de prototipos + mentorías</p>
           <p class="text-gray-400 text-sm">14:00–17:00 — Desarrollo + asesoría en tiempo real</p>
         </div>
-        <div class="timeline-item bg-cyber-dark rounded-lg shadow-md p-6 ml-8 cyber-border" style="background:linear-gradient(135deg,#1A1A2E 0%,#16213E 100%)">
+        <div class="timeline-item bg-cyber-dark rounded-lg shadow-md p-6 ml-8 cyber-border" style="background:linear-gradient(135deg, var(--color-bg-0) 0%, var(--color-bg-1) 100%)">
           <div class="timeline-dot"></div>
-          <time datetime="2025-09-19T09:00:00-05:00" class="block text-sm text-cyan-text font-medium mb-2">Día 3 — viernes 19 de septiembre</time>
+          <time datetime="2025-09-19T09:00:00-05:00" class="block text-sm font-medium mb-2" style="color:#F2C02A">Día 3 — viernes 19 de septiembre</time>
           <h3 class="font-semibold text-gray-100 mb-1">Sprint de desarrollo</h3>
           <p class="text-gray-400 text-sm">9:00–12:00 — Sprint de desarrollo</p>
           <p class="text-gray-400 text-sm">14:00–17:00 — Pruebas, iteración y feedback</p>
           <!-- El brief original omitía este día; agregado para alinear con 17–20. Confirmar. -->
         </div>
-        <div class="timeline-item bg-cyber-dark rounded-lg shadow-md p-6 ml-8 cyber-border" style="background:linear-gradient(135deg,#1A1A2E 0%,#16213E 100%)">
+        <div class="timeline-item bg-cyber-dark rounded-lg shadow-md p-6 ml-8 cyber-border" style="background:linear-gradient(135deg, var(--color-bg-0) 0%, var(--color-bg-1) 100%)">
           <div class="timeline-dot"></div>
-          <time datetime="2025-09-20T10:00:00-05:00" class="block text-sm text-cyan-text font-medium mb-2">Día 4 — sábado 20 de septiembre</time>
+          <time datetime="2025-09-20T10:00:00-05:00" class="block text-sm font-medium mb-2" style="color:#F2C02A">Día 4 — sábado 20 de septiembre</time>
           <h3 class="font-semibold text-gray-100 mb-1">Exhibición final</h3>
           <p class="text-gray-400 text-sm">10:00–13:00 — Exhibición final y presentación de proyectos (presencial)</p>
         </div>
@@ -252,9 +259,9 @@
     <h2 class="text-2xl sm:text-3xl font-bold neon-text mb-6 text-center cyber-glow">Inscríbete</h2>
     <p class="text-gray-300 text-center mb-6">Asegura tu cupo en la #HackathonAR.</p>
     <div class="text-center mb-8">
-      <a href="#inscripcion" class="inline-block px-8 py-3 rounded-full font-bold text-black text-lg shadow-lg focus-visible:outline-primary transition cyber-border" style="background:#00C2FF">Inscríbete</a>
+      <a href="#inscripcion" class="btn-primary inline-block px-8 py-3 rounded-full font-bold text-lg shadow-lg focus-visible:outline-primary transition cyber-border">Inscríbete</a>
     </div>
-    <div class="bg-cyber-dark rounded-xl shadow-lg p-8 cyber-border w-full" style="background:linear-gradient(135deg,#1A1A2E 0%,#16213E 100%)">
+    <div class="bg-cyber-dark rounded-xl shadow-lg p-8 cyber-border w-full" style="background:linear-gradient(135deg, var(--color-bg-0) 0%, var(--color-bg-1) 100%)">
       <div id="inscripcion-form" class="text-gray-300 text-center">
         <!-- Aquí se podrá embeber el iframe del formulario de inscripción cuando esté disponible. -->
         <p>Pronto habilitaremos el formulario de registro aquí.</p>
@@ -262,17 +269,17 @@
     </div>
   </section>
 
-  <footer class="bg-cyber-darker text-gray-200 py-8 mt-12 cyber-border relative z-20" style="background:linear-gradient(135deg,#16213E 0%,#0F3460 100%)">
+  <footer class="bg-cyber-darker text-gray-200 py-8 mt-12 cyber-border relative z-20" style="background:linear-gradient(135deg,var(--color-bg-1) 0%,var(--color-bg-2) 100%)">
     <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
       <nav class="flex flex-wrap gap-6 items-center text-sm mb-2 md:mb-0" aria-label="Enlaces rápidos del pie de página">
-        <a href="/docs/politica-privacidad.txt" target="_blank" rel="noopener" class="hover:text-cyan-text focus-visible:outline-primary">Política de privacidad</a>
-        <a href="/docs/codigo-conducta.txt" target="_blank" rel="noopener" class="hover:text-cyan-text focus-visible:outline-primary">Código de conducta</a>
-        <a href="mailto:xrcol.info@gmail.com" class="hover:text-cyan-text focus-visible:outline-primary">Contacto ✉️</a>
+        <a href="/docs/politica-privacidad.txt" target="_blank" rel="noopener" class="hover:text-primary focus-visible:outline-primary">Política de privacidad</a>
+        <a href="/docs/codigo-conducta.txt" target="_blank" rel="noopener" class="hover:text-primary focus-visible:outline-primary">Código de conducta</a>
+        <a href="mailto:xrcol.info@gmail.com" class="hover:text-primary focus-visible:outline-primary">Contacto ✉️</a>
       </nav>
       <div class="flex gap-4 items-center">
-        <a href="https://linkedin.com/company/colombiaxr" aria-label="LinkedIn" target="_blank" rel="noopener" class="focus-visible:outline-primary"><svg width="22" height="22" fill="none" viewBox="0 0 22 22"><rect width="22" height="22" rx="4" fill="#00C2FF"/><path d="M7 9v6M7 7v.01M11 15v-3a2 2 0 1 1 4 0v3" stroke="#000" stroke-width="1.5" stroke-linecap="round"/></svg></a>
-        <a href="https://www.meetup.com/colombia-xr-creando-realidades-construyendo-futuro/" aria-label="Meetup" target="_blank" rel="noopener" class="focus-visible:outline-primary"><svg width="22" height="22" fill="none" viewBox="0 0 22 22" aria-hidden="true"><rect width="22" height="22" rx="4" fill="#FF0080"/><path d="M7.5 15c-.7 0-1.2-.5-1.2-1.2 0-.6.5-1.1 1.1-1.1.7 0 1.2.5 1.2 1.2 0 .6-.5 1.1-1.1 1.1zm7-7c.7 0 1.2.5 1.2 1.2 0 .6-.5 1.1-1.1 1.1-.7 0-1.2-.5-1.2-1.2 0-.6.5-1.1 1.1-1.1zm-2.5 2.5c.7 0 1.2.5 1.2 1.2 0 .6-.5 1.1-1.1 1.1-.7 0-1.2-.5-1.2-1.2 0-.6.5-1.1 1.1-1.1zm-2.5 2.5c.7 0 1.2.5 1.2 1.2 0 .6-.5 1.1-1.1 1.1-.7 0-1.2-.5-1.2-1.2 0-.6.5-1.1 1.1-1.1zm1.25-6.5c.7 0 1.2.5 1.2 1.2 0 .6-.5 1.1-1.1 1.1-.7 0-1.2-.5-1.2-1.2 0-.6.5-1.1 1.1-1.1z" fill="#fff"/></svg></a>
-        <a href="https://www.instagram.com/lucid.dreamsxr/" aria-label="Instagram" target="_blank" rel="noopener" class="focus-visible:outline-primary"><svg width="22" height="22" fill="none" viewBox="0 0 22 22"><rect width="22" height="22" rx="4" fill="#FF0080"/><path d="M11 7a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm0 0V5m0 10v2m4-6h2m-14 0H3" stroke="#000" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+        <a href="https://linkedin.com/company/colombiaxr" aria-label="LinkedIn" target="_blank" rel="noopener" class="focus-visible:outline-primary"><svg width="22" height="22" fill="none" viewBox="0 0 22 22"><rect width="22" height="22" rx="4" fill="#CC9602"/><path d="M7 9v6M7 7v.01M11 15v-3a2 2 0 1 1 4 0v3" stroke="#000" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+        <a href="https://www.meetup.com/colombia-xr-creando-realidades-construyendo-futuro/" aria-label="Meetup" target="_blank" rel="noopener" class="focus-visible:outline-primary"><svg width="22" height="22" fill="none" viewBox="0 0 22 22" aria-hidden="true"><rect width="22" height="22" rx="4" fill="#D59B2F"/><path d="M7.5 15c-.7 0-1.2-.5-1.2-1.2 0-.6.5-1.1 1.1-1.1.7 0 1.2.5 1.2 1.2 0 .6-.5 1.1-1.1 1.1zm7-7c.7 0 1.2.5 1.2 1.2 0 .6-.5 1.1-1.1 1.1-.7 0-1.2-.5-1.2-1.2 0-.6.5-1.1 1.1-1.1zm-2.5 2.5c.7 0 1.2.5 1.2 1.2 0 .6-.5 1.1-1.1 1.1-.7 0-1.2-.5-1.2-1.2 0-.6.5-1.1 1.1-1.1zm-2.5 2.5c.7 0 1.2.5 1.2 1.2 0 .6-.5 1.1-1.1 1.1-.7 0-1.2-.5-1.2-1.2 0-.6.5-1.1 1.1-1.1zm1.25-6.5c.7 0 1.2.5 1.2 1.2 0 .6-.5 1.1-1.1 1.1-.7 0-1.2-.5-1.2-1.2 0-.6.5-1.1 1.1-1.1z" fill="#0F0F10"/></svg></a>
+        <a href="https://www.instagram.com/lucid.dreamsxr/" aria-label="Instagram" target="_blank" rel="noopener" class="focus-visible:outline-primary"><svg width="22" height="22" fill="none" viewBox="0 0 22 22"><rect width="22" height="22" rx="4" fill="#C77429"/><path d="M11 7a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm0 0V5m0 10v2m4-6h2m-14 0H3" stroke="#0F0F10" stroke-width="1.5" stroke-linecap="round"/></svg></a>
       </div>
     </div>
     <div class="text-center text-xs text-gray-400 mt-4">© 2025 <strong>ColombiaXR</strong></div>

@@ -4,61 +4,174 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>ColombiaXR – Comunidad y Eventos</title>
-  <meta name="description" content="ColombiaXR: Comunidad de tecnologías interactivas e inmersivas. Próximos eventos, agenda y comunidad.">
+  <meta name="description" content="ColombiaXR: Comunidad XR de Colombia. Eventos, aprendizaje y conexiones para experiencias interactivas e inmersivas.">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="shortcut icon" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" media="all" onload="this.media='all'">
   <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-  <script>tailwind.config={theme:{extend:{colors:{brand:'#00E5FF',bg:'#0A0A0A'}}}}</script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#00E5FF',
+            secondary: '#FF0080',
+            tertiary: '#00D4FF',
+            cyber: { dark:'#1A1A2E', darker:'#16213E', neon:'#00E5FF', pink:'#FF0080', cyan:'#00D4FF' }
+          },
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'] }
+        }
+      }
+    }
+  </script>
   <style>
-    body{background:#0A0A0A;color:#F4F4F5;font-family:Inter,ui-sans-serif,system-ui}
+    html{scroll-behavior:smooth}
+    body{background:#0c1222;color:#e7eaf0;font-family:Inter,ui-sans-serif,system-ui}
+    [tabindex]:focus-visible,:focus-visible{outline:2px solid #00E5FF;outline-offset:2px}
+    .hero-surface{position:relative;isolation:isolate}
+    .hero-title{letter-spacing:-0.01em}
+    .subtle-neon{color:#9aeaff;text-shadow:0 0 2px rgba(0,229,255,.35)}
+    .surface{background:rgba(255,255,255,0.035);border:1px solid rgba(255,255,255,0.08);border-radius:16px}
+    .soft-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.10);border-radius:16px}
+    .soft-hr{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.12),transparent)}
+    .pill{border-radius:9999px}
     .cards-grid{display:grid;grid-template-columns:repeat(1,minmax(0,1fr));gap:1rem}
     @media(min-width:640px){.cards-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(min-width:1024px){.cards-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    header,main,footer{position:relative;z-index:1}
+    #hero-canvas{position:absolute;inset:0;z-index:0;pointer-events:none}
   </style>
+  <script>
+    document.addEventListener('DOMContentLoaded',function(){
+      if(window.tsParticles){
+        tsParticles.load('hero-canvas',{
+          fullScreen:{ enable:false },
+          background:{ color:{ value:'transparent' }},
+          particles:{
+            number:{ value:24, density:{ enable:true, area:800 }},
+            color:{ value:["#7dd3fc","#fde68a","#60a5fa"]},
+            shape:{ type:"circle" },
+            opacity:{ value:0.25 },
+            size:{ value:{ min:1, max:2.5 } },
+            links:{ enable:true, distance:140, color:{ value:"#60a5fa"}, opacity:0.18, width:1 },
+            move:{ enable:true, speed:0.35, direction:"none", outModes:{ default:"out" } }
+          },
+          interactivity:{
+            events:{ onHover:{ enable:true, mode:"slow" }, onClick:{ enable:false }, resize:true },
+            modes:{ slow:{ factor:1.5, radius:120 } }
+          },
+          detectRetina:true
+        });
+      }
+    });
+  </script>
 </head>
 <body class="antialiased">
-  <header class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-    <a href="/" class="flex items-center gap-2 text-brand font-extrabold text-lg">ColombiaXR</a>
+  <header class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-3 text-primary font-extrabold text-lg" aria-label="Inicio ColombiaXR">
+      <img src="/img/Logos/ColombiaXR.png" alt="ColombiaXR" width="32" height="32" class="w-8 h-8">
+      <span>ColombiaXR</span>
+    </a>
     <nav class="hidden sm:flex items-center gap-6 text-sm">
-      <a href="/events/" class="hover:text-brand">Todos los eventos</a>
-      <a href="#about" class="hover:text-brand">Comunidad</a>
-      <a href="#contact" class="hover:text-brand">Contacto</a>
+      <a href="/events/" class="hover:text-primary">Eventos</a>
+      <a href="#mission" class="hover:text-primary">Misión</a>
+      <a href="#follow" class="hover:text-primary">Síguenos</a>
     </nav>
   </header>
   <main>
-    <section class="text-center py-16" style="background:linear-gradient(135deg,#1A1A2E 0%,#16213E 50%,#0F3460 100%)">
-      <div class="max-w-3xl mx-auto px-6">
-        <h1 class="text-3xl sm:text-5xl font-extrabold mb-4">Eventos y Comunidad ColombiaXR</h1>
-        <p class="text-lg text-gray-300 mb-8">Explora experiencias inmersivas, demos, charlas y networking. Mantente al día con nuestros próximos encuentros.</p>
-        <a href="/events/" class="inline-block px-8 py-3 rounded-full bg-brand text-black font-bold shadow hover:opacity-90">Ver todos los eventos</a>
+    <section id="hero" class="hero-surface py-20" style="position:relative">
+      <div id="hero-canvas" aria-hidden="true"></div>
+      <div class="relative z-10 max-w-6xl mx-auto px-6">
+        <div class="flex flex-col items-center gap-8">
+          <img src="/img/Logos/ColombiaXR.png" alt="ColombiaXR" width="300" height="300" class="w-72 h-72">
+          <div class="text-center">
+            <h1 class="hero-title text-2xl sm:text-4xl font-extrabold mb-4">Comunidad XR de Colombia</h1>
+            <p class="text-base text-gray-300 mb-8">Eventos, aprendizaje y conexiones para quienes crean experiencias interactivas e inmersivas.</p>
+            <div class="flex items-center justify-center gap-3 flex-wrap">
+              <a href="#next-event" class="inline-block px-6 py-3 pill bg-primary text-black font-semibold hover:opacity-90">Próximo evento</a>
+              <a href="#mission" class="inline-block px-6 py-3 pill border border-white/20 text-white hover:border-white/40">Nuestra misión</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <section id="follow" class="max-w-6xl mx-auto px-6 py-12">
+      <h2 class="text-2xl font-bold mb-3 subtle-neon">Síguenos</h2>
+      <div class="flex flex-wrap items-center gap-3">
+        <a href="https://www.linkedin.com/company/colombiaxr" target="_blank" rel="noopener" class="px-4 py-2 pill border border-white/20 hover:border-white/40">LinkedIn</a>
+        <a href="https://twitter.com/" target="_blank" rel="noopener" class="px-4 py-2 pill border border-white/20 hover:border-white/40">X/Twitter</a>
+        <a href="https://bsky.app/" target="_blank" rel="noopener" class="px-4 py-2 pill border border-white/20 hover:border-white/40">Bluesky</a>
+        <a href="https://discord.com/" target="_blank" rel="noopener" class="px-4 py-2 pill border border-white/20 hover:border-white/40">Discord</a>
       </div>
     </section>
-    <section class="max-w-7xl mx-auto px-6 py-12">
-      <h2 class="text-2xl font-bold mb-4">Próximo evento</h2>
+
+    <section class="max-w-6xl mx-auto px-6 py-12">
+      <h2 class="text-2xl font-bold mb-4 subtle-neon">Próximo evento</h2>
       <div id="next-event"></div>
+      <div class="mt-4 text-sm text-gray-400 flex items-center gap-4 flex-wrap">
+        <a href="/events/" class="hover:text-primary">Ver eventos anteriores</a>
+        <span class="soft-hr" style="width:1px"></span>
+        <a href="https://www.linkedin.com/company/colombiaxr" target="_blank" rel="noopener" class="hover:text-primary">Únete a la comunidad</a>
+      </div>
     </section>
-    <section class="max-w-7xl mx-auto px-6 py-6">
-      <h2 class="text-2xl font-bold mb-3">Próximos</h2>
+
+    <section class="max-w-6xl mx-auto px-6 py-6" hidden>
+      <h2 class="text-2xl font-bold mb-3 subtle-neon">Próximos</h2>
       <div id="events-upcoming" class="cards-grid"></div>
     </section>
-    <section class="max-w-7xl mx-auto px-6 py-6">
-      <details open>
-        <summary class="text-2xl font-bold cursor-pointer">Eventos pasados</summary>
-        <div id="events-past" class="cards-grid mt-4"></div>
-      </details>
-    </section>
-    <section id="about" class="max-w-7xl mx-auto px-6 py-12">
-      <h2 class="text-2xl font-bold mb-3">Sobre la comunidad</h2>
-      <p class="text-gray-300">ColombiaXR impulsa el ecosistema de tecnologías inmersivas en Colombia conectando desarrolladores, creativos, empresas y academia mediante eventos y espacios de colaboración.</p>
-    </section>
-    <section id="contact" class="max-w-7xl mx-auto px-6 py-12">
-      <h2 class="text-2xl font-bold mb-3">Contacto</h2>
-      <p class="text-gray-300">Escríbenos a <a href="mailto:xrcol.info@gmail.com" class="underline">xrcol.info@gmail.com</a> o síguenos en <a href="https://linkedin.com/company/colombiaxr" class="underline" target="_blank" rel="noopener">LinkedIn</a>.</p>
-    </section>
+
+    <section class="max-w-6xl mx-auto px-6 py-6">
+      <h2 class="text-2xl font-bold mb-3 subtle-neon">Eventos pasados</h2>
+      <div id="events-past" class="cards-grid mt-4"></div>
+  </section>
+
+    <section id="mission" class="max-w-6xl mx-auto px-6 py-12">
+      <div class="grid md:grid-cols-2 gap-8 items-start">
+      <div>
+          <h2 class="text-2xl font-bold mb-3 subtle-neon">Nuestra misión</h2>
+          <p class="text-gray-300">Construir y habilitar una comunidad XR próspera aquí en Colombia y actuar como un puente para difundir nuestro talento al mundo.</p>
+      </div>
+      <div>
+          <h3 class="text-xl font-semibold mb-3">Visión</h3>
+          <p class="text-gray-300">Queremos ayudar a crecer una comunidad con impacto positivo para todos nuestros miembros y colaboradores. Un lugar donde las personas puedan aprender unas de otras, inspirarse para sus propios proyectos y encontrar nuevos colaboradores.</p>
+          <p class="text-gray-300 mt-3">Es nuestro objetivo que ColombiaXR se convierta en una plataforma para mostrar el increíble trabajo que se está realizando en el sector XR de Colombia, tanto a nivel nacional como internacionalmente.</p>
+        </div>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-4 mt-8">
+        <div class="soft-card p-4">
+          <h4 class="font-semibold mb-1">Comunidad</h4>
+          <p class="text-sm text-gray-300">La comunidad es el corazón absoluto de ColombiaXR. Estamos trabajando para construir una comunidad que sea colaborativa, inclusiva y solidaria.</p>
+          <p class="text-sm text-gray-300 mt-2">Una que conecte personas permitiéndoles encontrar colaboradores, mentores y personas que ayuden a llevar sus ideas al siguiente nivel.</p>
+        </div>
+        <div class="soft-card p-4">
+          <h4 class="font-semibold mb-1">Alcance</h4>
+          <p class="text-sm text-gray-300">Globalmente, Colombia tiene una fuerte reputación por su creatividad e innovación, y nuestro objetivo es ayudar a construir esa misma reputación para su escena XR.</p>
+          <p class="text-sm text-gray-300 mt-2">A través de las redes sociales, planeamos contar al mundo sobre el emocionante trabajo que se está realizando aquí, desde proyectos individuales hasta el trabajo realizado por las grandes empresas.</p>
+    </div>
+        <div class="soft-card p-4">
+          <h4 class="font-semibold mb-1">Colaboración</h4>
+          <p class="text-sm text-gray-300">Crear puentes entre creativos, tecnólogos, académicos y organizaciones para impulsar el ecosistema XR colombiano.</p>
+          <p class="text-sm text-gray-300 mt-2">Facilitar espacios donde las ideas se conviertan en proyectos y los proyectos en realidades que impacten positivamente a la sociedad.</p>
+      </div>
+      </div>
+  </section>
   </main>
-  <footer class="max-w-7xl mx-auto px-6 py-8 text-sm text-gray-400">© 2025 ColombiaXR</footer>
+  <footer class="max-w-6xl mx-auto px-6 py-10 text-sm text-gray-400">
+    <div class="flex flex-wrap items-center gap-4 justify-between">
+      <span>© 2025 ColombiaXR</span>
+      <nav class="flex items-center gap-4">
+        <a href="mailto:xrcol.info@gmail.com" class="hover:text-primary">xrcol.info@gmail.com</a>
+        <a href="/events/" class="hover:text-primary">Eventos</a>
+        <a href="#mission" class="hover:text-primary">Misión</a>
+      </nav>
+    </div>
+  </footer>
   <script src="/assets/js/home.js" defer></script>
 </body>
 </html>
