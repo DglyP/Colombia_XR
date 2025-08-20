@@ -55,7 +55,25 @@
     html{scroll-behavior:smooth}
     [tabindex]:focus-visible{outline:2px solid #CC9602;outline-offset:3px}
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-    @media (max-width:768px){.nav-links{display:none}.nav-open .nav-links{display:flex}}
+    @media (max-width:768px){
+      .nav-links{
+        display:none;
+        position:absolute;
+        top:100%;
+        left:0;
+        right:0;
+        background:var(--color-bg-0);
+        border-top:1px solid #CC9602;
+        padding:1rem;
+        flex-direction:column;
+        gap:1rem;
+        z-index:50;
+        box-shadow:0 4px 6px rgba(0,0,0,0.3);
+      }
+      .nav-open .nav-links{
+        display:flex
+      }
+    }
     .aspect-ratio-iframe{position:relative;width:100%;padding-bottom:56.25%}
     .aspect-ratio-iframe iframe{position:absolute;top:0;left:0;width:100%;height:100%}
     .hamburger[aria-expanded="true"] .bar:nth-child(1){transform:translateY(8px) rotate(45deg)}
@@ -135,18 +153,16 @@
   }</script>
 </head>
 <body class="event-root font-sans bg-cyber-dark text-gray-100 antialiased">
-  <header class="relative z-20">
-    <nav class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto" aria-label="Navegación principal">
-      <a href="/" class="flex items-center gap-2 text-primary font-extrabold text-lg focus-visible:outline-primary" aria-label="#HackathonAR Inicio">
-        <span aria-hidden="true">
-          <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-primary font-extrabold text-black text-base">XR</span>
-        </span>
-        <span class="font-extrabold">ColombiaXR</span>
+  <header class="relative z-50 max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3 text-primary font-extrabold text-lg focus-visible:outline-primary" aria-label="Inicio ColombiaXR">
+        <img src="/img/Logos/ColombiaXR.png" alt="ColombiaXR" width="32" height="32" class="w-8 h-8">
+        <span>ColombiaXR</span>
       </a>
+    <nav class="flex items-center gap-6">
       <button id="nav-toggle" class="hamburger md:hidden focus-visible:outline-primary" aria-label="Abrir menú de navegación" aria-controls="nav-menu" aria-expanded="false" tabindex="0">
         <span class="bar"></span><span class="bar"></span><span class="bar"></span>
       </button>
-      <ul id="nav-menu" class="nav-links flex-col md:flex-row md:flex gap-6 items-center font-semibold text-base hidden md:flex" role="menubar">
+      <ul id="nav-menu" class="nav-links hidden md:flex gap-6 items-center font-semibold text-base" role="menubar">
         <li><a href="#quees" class="hover:text-primary focus-visible:outline-primary" role="menuitem">¿Qué es?</a></li>
         <li><a href="#fechas" class="hover:text-primary focus-visible:outline-primary" role="menuitem">Fechas</a></li>
         <li><a href="#agenda" class="hover:text-primary focus-visible:outline-primary" role="menuitem">Agenda</a></li>

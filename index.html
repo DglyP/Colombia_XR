@@ -13,7 +13,8 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" media="all" onload="this.media='all'">
   <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.dots.min.js"></script>
   <script>
     tailwind.config = {
       theme: {
@@ -43,49 +44,81 @@
     .cards-grid{display:grid;grid-template-columns:repeat(1,minmax(0,1fr));gap:1rem}
     @media(min-width:640px){.cards-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(min-width:1024px){.cards-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-    header,main,footer{position:relative;z-index:1}
-    #hero-canvas{position:absolute;inset:0;z-index:0;pointer-events:none}
+    header,main,footer{position:relative;z-index:10}
+    #hero-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
+    .hamburger[aria-expanded="true"] .bar:nth-child(1){transform:translateY(8px) rotate(45deg)}
+    .hamburger[aria-expanded="true"] .bar:nth-child(2){opacity:0}
+    .hamburger[aria-expanded="true"] .bar:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+    .hamburger .bar{display:block;width:24px;height:3px;margin:5px auto;background:#00E5FF;transition:.3s}
+    @media (max-width:768px){
+      .nav-links{
+        display:none;
+        position:absolute;
+        top:100%;
+        left:0;
+        right:0;
+        background:#0c1222;
+        border-top:1px solid #00E5FF;
+        padding:1rem;
+        flex-direction:column;
+        gap:1rem;
+        z-index:50;
+        box-shadow:0 4px 6px rgba(0,0,0,0.3);
+      }
+      .nav-open .nav-links{
+        display:flex
+      }
+    }
   </style>
   <script>
     document.addEventListener('DOMContentLoaded',function(){
-      if(window.tsParticles){
-        tsParticles.load('hero-canvas',{
-          fullScreen:{ enable:false },
-          background:{ color:{ value:'transparent' }},
-          particles:{
-            number:{ value:24, density:{ enable:true, area:800 }},
-            color:{ value:["#7dd3fc","#fde68a","#60a5fa"]},
-            shape:{ type:"circle" },
-            opacity:{ value:0.25 },
-            size:{ value:{ min:1, max:2.5 } },
-            links:{ enable:true, distance:140, color:{ value:"#60a5fa"}, opacity:0.18, width:1 },
-            move:{ enable:true, speed:0.35, direction:"none", outModes:{ default:"out" } }
-          },
-          interactivity:{
-            events:{ onHover:{ enable:true, mode:"slow" }, onClick:{ enable:false }, resize:true },
-            modes:{ slow:{ factor:1.5, radius:120 } }
-          },
-          detectRetina:true
+      var navBtn=document.getElementById('nav-toggle'),nav=document.getElementById('nav-menu');
+      if(navBtn&&nav){navBtn.addEventListener('click',function(){
+        var expanded=navBtn.getAttribute('aria-expanded')==='true';
+        navBtn.setAttribute('aria-expanded',!expanded);
+        document.body.classList.toggle('nav-open',!expanded);
+      });}
+      if(window.VANTA){
+        VANTA.DOTS({
+          el: "#hero-canvas",
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          scale: 1.00,
+          scaleMobile: 1.00,
+          color: 0x00E5FF,
+          color2: 0xFF0080,
+          backgroundColor: 0x0c1222,
+          size: 1.50,
+          showLines: false,
+          spacing: 50.00
         });
       }
     });
   </script>
 </head>
 <body class="antialiased">
-  <header class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+  <header class="relative z-50 max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
     <a href="/" class="flex items-center gap-3 text-primary font-extrabold text-lg" aria-label="Inicio ColombiaXR">
       <img src="/img/Logos/ColombiaXR.png" alt="ColombiaXR" width="32" height="32" class="w-8 h-8">
       <span>ColombiaXR</span>
     </a>
-    <nav class="hidden sm:flex items-center gap-6 text-sm">
-      <a href="/events/" class="hover:text-primary">Eventos</a>
-      <a href="#mission" class="hover:text-primary">Misión</a>
-      <a href="#follow" class="hover:text-primary">Síguenos</a>
+    <nav class="flex items-center gap-6">
+      <button id="nav-toggle" class="hamburger md:hidden focus-visible:outline-primary" aria-label="Abrir menú de navegación" aria-controls="nav-menu" aria-expanded="false" tabindex="0">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+      <ul id="nav-menu" class="nav-links hidden md:flex gap-6 items-center font-semibold text-base" role="menubar">
+        <li><a href="/events/" class="hover:text-primary focus-visible:outline-primary" role="menuitem">Eventos</a></li>
+        <li><a href="#mission" class="hover:text-primary focus-visible:outline-primary" role="menuitem">Misión</a></li>
+        <li><a href="#follow" class="hover:text-primary focus-visible:outline-primary" role="menuitem">Síguenos</a></li>
+      </ul>
     </nav>
   </header>
+  <div id="hero-canvas" aria-hidden="true"></div>
   <main>
     <section id="hero" class="hero-surface py-20" style="position:relative">
-      <div id="hero-canvas" aria-hidden="true"></div>
       <div class="relative z-10 max-w-6xl mx-auto px-6">
         <div class="flex flex-col items-center gap-8">
           <img src="/img/Logos/ColombiaXR.png" alt="ColombiaXR" width="300" height="300" class="w-72 h-72">
